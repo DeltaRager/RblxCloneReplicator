@@ -31,3 +31,27 @@
 			at a regular interval which will be set according to Quota
 			restrictions.
 ]]--
+
+local RS = game:GetService("ReplicatedStorage")
+local RepMods = RS.ReplicatorModules
+
+local playerblock = require(RepMods.PlayerBlock)
+local CS = require(RepMods.ClonerService)
+
+local function playerjoin(player : Player)
+	local name = player.Name
+	local ID = player.UserId
+
+	local block = playerblock:new(name,ID)
+	block:Display()
+
+	player.CharacterAdded:Wait()
+	local function charadded(character : Model)
+
+	end
+end
+
+for _,Player in pairs(game.Players:GetChildren()) do
+	playerjoin(Player)
+end
+game.Players.PlayerAdded:Connect(playerjoin)
