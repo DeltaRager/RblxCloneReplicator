@@ -26,10 +26,21 @@
 	Log #1 10-09-2021:
 		-> 	Started documenting
 		-> 	Defined the PlayerBlock structure that will cache all
-			relevant data related to replicating the player on 
+			relevant data related to replicating the player on
 			another server. The data will be sent/added to the queue
 			at a regular interval which will be set according to Quota
 			restrictions.
+
+	Log #2 10-10-2021:
+		->	Project setup with Rojo v.6
+		->	Create new scripts:
+				ModuleScripts:
+					1. PlayerBlock : The custom data defined for each player
+					2. ClonerService : Module used to for the cloning services
+					3. ClonerNetwork : Custom network module
+					4. Added maid module
+		->	Initialized "ClonerClient" and create event for KeyPress "R" [will be used to activate service]
+		->	Maid added for ease of de-referencing and garbage collection
 ]]--
 
 local RS = game:GetService("ReplicatedStorage")
